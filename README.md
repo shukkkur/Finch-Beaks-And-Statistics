@@ -54,3 +54,28 @@ print('95% confidence interval =', conf_int, 'mm')
 >>> difference of means = 0.22622047244094645 mm
 >>> 95% confidence interval = [0.05633521 0.39190544] mm
 ```
+
+<h3>Hypothesis test: Are beaks deeper in 2012?</h3>
+<p>The ECDF and determination of the confidence interval make it pretty clear that the beaks of G. scandens on Daphne Major have gotten deeper. But is it possible that this effect is just due to random chance? In other words, what is the probability that we would get the observed difference in mean beak depth if the means were the same?</p>
+
+```python
+combined_mean = np.mean(np.concatenate((bd_1975, bd_2012)))
+
+# Shift the samples
+bd_1975_shifted = bd_1975 - np.mean(bd_1975) + combined_mean
+bd_2012_shifted = bd_2012 - np.mean(bd_2012) + combined_mean
+
+# Bootstrap replicates of shifted data sets
+bs_replicates_1975 = draw_bs_reps(bd_1975_shifted, np.mean, size=10000)
+bs_replicates_2012 = draw_bs_reps(bd_2012_shifted, np.mean, size=10000)
+
+bs_diff_replicates = bs_replicates_2012 - bs_replicates_1975
+
+# p-value
+p = np.sum(bs_diff_replicates >= mean_diff) / len(bs_diff_replicates)
+
+print('p =', p)
+
+>>> p = 0.0034 
+```
+<p>p-value of <code>0.0034</code> suggests that there is a <b>statistically significant difference</b>.</p>
