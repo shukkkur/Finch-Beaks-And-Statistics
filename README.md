@@ -81,3 +81,17 @@ print('p =', p)
 <p>p-value of <code>0.0034</code> suggests that there is a <b>statistically significant difference</b>.<br>That means, the beak length have changed over the course of 37 years.</p>
 
 <h3>EDA of beak length and depth</h3>
+
+```python
+# scatter plot of 1975 data
+_ = plt.plot(bl_1975, bd_1975, marker='.', linestyle='None', color='blue', alpha=0.5)
+
+# scatter plot of 2012 data
+_ = plt.plot(bl_2012, bd_2012, marker='.', linestyle='None', color='red', alpha=0.5)
+
+plt.show()
+```
+
+<img src='datasets/scatter.jpg'>
+
+<p>Looking at the plot, we see that beaks got deeper and a bit shorter. So, it does not look like the beaks kept the same shape; they became <i>shorter and deeper</i>.</p>
