@@ -32,6 +32,7 @@ _ = plt.plot(x_2012,y_2012, marker='.', linestyle='none')
 <img src='datasets/ecdfs.jpg'>
 <p>The differences are much clearer in the ECDF. The mean is larger in the 2012 data, and the variance does appear larger as well.</p>
 
+
 <h4>Parameter estimates of beak depths</h4>
 
 ```python
@@ -95,3 +96,17 @@ plt.show()
 <img src='datasets/scatter.jpg'>
 
 <p>Looking at the plot, we see that beaks got deeper and a bit shorter. So, it does not look like the beaks kept the same shape; they became <i>shorter and deeper</i>.</p>
+
+
+<h4>Displaying the Linear regression Results</h4>
+<p><i>Code can be found <a href='notebook.ipynb' target='_blank'>here</a></i></p>
+
+<img src='datasets/linreg.jpg'>
+
+```python
+1975: slope = 0.4652051691605937 conf int = [0.33310645 0.58996223]
+1975: intercept = 2.3908752365842263 conf int = [0.60754109 4.21248022]
+2012: slope = 0.462630358835313 conf int = [0.33060855 0.60024108]
+2012: intercept = 2.9772474982360198 conf int = [1.15365093 4.72831245]
+```
+
