@@ -78,4 +78,6 @@ print('p =', p)
 
 >>> p = 0.0034 
 ```
-<p>p-value of <code>0.0034</code> suggests that there is a <b>statistically significant difference</b>.</p>
+<p>p-value of <code>0.0034</code> suggests that there is a <b>statistically significant difference</b>.<br>That's means, the beak length have changed over the course of 37 years.</p>
+
+<h3>EDA of beak length and depth</h3>
