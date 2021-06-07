@@ -99,7 +99,7 @@ plt.show()
 
 
 <h4>Displaying the Linear regression Results</h4>
-<p><i>Code can be found <a href='notebook.ipynb' target='_blank'>here</a></i></p>
+<p><i>Code can be found <a href='notebook.ipynb' target="_blank">here</a></i></p>
 
 <img src='datasets/linreg.jpg'>
 
@@ -109,4 +109,5 @@ plt.show()
 2012: slope = 0.462630358835313 conf int = [0.33060855 0.60024108]
 2012: intercept = 2.9772474982360198 conf int = [1.15365093 4.72831245]
 ```
+<p>It looks like they have the same slope, but different intercepts.</p>
 
