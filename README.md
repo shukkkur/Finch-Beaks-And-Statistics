@@ -114,7 +114,7 @@ plt.show()
 <p>The slope was the same in 1975 and 2012, suggesting that for every millimeter gained in beak length, the birds gained about half a millimeter in depth in both years. However, if we are interested in the shape of the beak, we want to compare the ratio of beak length to beak depth.
 </p>
 
-<h4>Beak length to depth ratio</h4>
+<h3>Beak length to depth ratio</h3>
 
 ```python
 # length-to-depth ratios
@@ -137,3 +137,4 @@ conf_int_2012 = np.percentile(bs_replicates_2012, [0.5,99.5])
 1975: mean ratio = 1.5788823771858533 conf int = [1.55668803 1.60073509]
 2012: mean ratio = 1.4658342276847767 conf int = [1.44363932 1.48729149]
 </pre>
+<p>It is impossible to say if this is a <i>real effect</i> or just due to <i>noise</i> without computing a p-value.</p>
