@@ -103,11 +103,37 @@ plt.show()
 
 <img src='datasets/linreg.jpg'>
 
-```python
+<p>It looks like they have the same slope, but different intercepts.</p>
+
+<pre>
 1975: slope = 0.4652051691605937 conf int = [0.33310645 0.58996223]
 1975: intercept = 2.3908752365842263 conf int = [0.60754109 4.21248022]
 2012: slope = 0.462630358835313 conf int = [0.33060855 0.60024108]
 2012: intercept = 2.9772474982360198 conf int = [1.15365093 4.72831245]
-```
-<p>It looks like they have the same slope, but different intercepts.</p>
+</pre>
+<p>The slope was the same in 1975 and 2012, suggesting that for every millimeter gained in beak length, the birds gained about half a millimeter in depth in both years. However, if we are interested in the shape of the beak, we want to compare the ratio of beak length to beak depth.
+</p>
 
+<h4>Beak length to depth ratio</h4>
+
+```python
+# length-to-depth ratios
+ratio_1975 = bl_1975/bd_1975
+ratio_2012 = bl_2012/bd_2012
+
+# means
+mean_ratio_1975 = np.mean(ratio_1975)
+mean_ratio_2012 = np.mean(ratio_2012)
+
+# bootstrap replicates of the means
+bs_replicates_1975 = draw_bs_reps(ratio_1975, np.mean, size=10000)
+bs_replicates_2012 = draw_bs_reps(ratio_2012, np.mean, size=10000)
+
+# 99% confidence intervals
+conf_int_1975 = np.percentile(bs_replicates_1975, [0.5,99.5])
+conf_int_2012 = np.percentile(bs_replicates_2012, [0.5,99.5])
+```
+<pre>
+1975: mean ratio = 1.5788823771858533 conf int = [1.55668803 1.60073509]
+2012: mean ratio = 1.4658342276847767 conf int = [1.44363932 1.48729149]
+</pre>
